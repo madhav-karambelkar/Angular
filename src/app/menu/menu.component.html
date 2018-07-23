@@ -13,13 +13,21 @@
 			<mat-grid-tile *ngFor="let dish of dishes"><!--This *For is like a itertor ot the for loop As Stru. Direct. -->
 				<img height="200px" src={{dish.image}} alt={{dish.name}}>
 				<mat-grid-tile-footer>
-					<h1 matLine> {{dish.name | uppercase }} </h1>
+					<h1 matLine>{{dish.name | uppercase}}</h1>
 					<!--that is pipe-->
 				</mat-grid-tile-footer>	
 			</mat-grid-tile>
 		</mat-grid-list>
 	</div>
-	<div fxFlex *ngIf="selectedDish">
+	<div fxFlex *ngIf="selectedDishDetail" cols="2">
+		<h2 matLine> {{selectedDishDetail.details}} </h2>
+			
+			<div fxFlex *ngIf="selectedDishDetail">
+			
+			<h3 matLine> {{selectedDishDetail.comments}} </h3>
+			
+		</div>		
+	<!--
 			<mat-card>
 				<mat-card-header>
 					<mat-card-title>
@@ -37,5 +45,7 @@
 					<button mat-button>SHARE</button>
 				</mat-card-actions>
 			</mat-card>
+		-->
 	</div>	
+
 </div>
